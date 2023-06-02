@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <title>stack</title>
+    <script>
+      let data = [];
+      let currentSize = data.length;
+
+      function Push() {
+        let newVal = document.getElementById(`newEl`).value;
+        data[currentSize] = newVal;
+        currentSize++;
+      }
+      function Pop() {
+        if (currentSize > 0) {
+          currentSize--;
+          data.length = currentSize;
+        }
+      }
+      function Display() {
+        for (let i = 0; i < currentSize ; i++) {
+          console.log(data[i]);
+        }
+      }
+
+      console.log(data);
+    </script>
+  </head>
+  <body>
+    <h1>stack</h1>
+    <input type="text" placeholder="value" id="newEl" />
+    <button onclick="Push()">Add</button>
+    <button onclick="Pop()">Remove</button>
+    <button onclick="Display()">Display</button>
+  </body>
+</html>
